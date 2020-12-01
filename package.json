@@ -1,0 +1,31 @@
+{
+  "name": "@panelbear/panelbear-js",
+  "version": "1.0.0",
+  "description": "Official Panelbear JS client (browser)",
+  "repository": "https://github.com/panelbearhq/panelbear-js",
+  "keywords": [
+    "panelbear",
+    "analytics"
+  ],
+  "author": "Anthony N. Simon @ Panelbear",
+  "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc --declaration",
+    "fmt": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.0.5"
+  }
+}
