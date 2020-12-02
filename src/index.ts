@@ -41,6 +41,9 @@ export const load = (site: string, config?: PanelbearConfig): void => {
 
   interpret('config', {
     site: site,
+    // Disable auto-track on the JS client. Most projects using this library need
+    // more control over the event handlers.
+    autoTrack: false,
     ...config,
   });
 };
