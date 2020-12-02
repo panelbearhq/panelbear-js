@@ -18,7 +18,7 @@ Or with yarn:
 yarn add @panelbear/panelbear-js
 ```
 
-### Load
+### Basic usage
 You can now import, and use the Panelbear client on your project.
 
 ```javascript
