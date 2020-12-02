@@ -45,9 +45,9 @@ Panelbear.track('NewsletterSignup');
 Here's an example integration with NextJS using standard React hooks:
 
 ```javascript
-// pages/_app.js
+// ./pages/_app.js
 
-import { usePanelbear } from './../hooks/panelbear.js'
+import { usePanelbear } from './../hooks/panelbear';
 
 function CustomApp({ Component, pageProps }) {
     // Load Panelbear only once during the app lifecycle
@@ -59,11 +59,11 @@ function CustomApp({ Component, pageProps }) {
     return <Component {...pageProps} />
 }
 
-export default CustomApp
+export default CustomApp;
 ```
 
 ```javascript
-// hooks/panelbear.js
+// ./hooks/panelbear.js
 
 import * as Panelbear from "@panelbear/panelbear-js";
 import { useRouter } from "next/router";
