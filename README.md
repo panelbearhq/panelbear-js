@@ -59,7 +59,7 @@ function CustomApp({ Component, pageProps }) {
     return <Component {...pageProps} />
 }
 
-export default MyApp
+export default CustomApp
 ```
 
 ```javascript
