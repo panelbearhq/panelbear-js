@@ -1,6 +1,12 @@
-# Panelbear JS client (browser)
+# Panelbear client (browser)
 
 A simple JavaScript library for [Panelbear Analytics](https://panelbear.com).
+
+## Highlights
+- Just a thin wrapper around the Panelbear analytics script.
+- Integrates with most JS frameworks.
+- Typed (Typescript).
+
 
 ## Quickstart
 
