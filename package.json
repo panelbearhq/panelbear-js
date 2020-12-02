@@ -1,6 +1,6 @@
 {
   "name": "@panelbear/panelbear-js",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Official Panelbear JS client (browser)",
   "repository": {
     "type": "git",
