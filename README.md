@@ -74,7 +74,7 @@ export const usePanelbear = (site, config = {}) => {
 
   useEffect(() => {
     Panelbear.load(site, config);
-    
+
     // Trigger initial page view
     Panelbear.trackPageview();
 
@@ -91,6 +91,9 @@ export const usePanelbear = (site, config = {}) => {
 
 
 ## Changelog
+### 1.2.0
+- Allow scriptSrc config option to load Panelbear script from own domain.
+
 ### 1.1.0
 - By default, load tracker with `autoTrack` set to `false`.
 
