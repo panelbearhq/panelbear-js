@@ -4,6 +4,7 @@ export interface PanelbearConfig {
   site?: string;
   debug?: boolean;
   analyticsHost?: string;
+  scriptSrc?: string;
   honorDNT?: boolean;
   autoTrack?: boolean;
   spaMode?: 'history' | 'off';
@@ -36,7 +37,9 @@ const interpret: PanelbearInterpreter = (command: any, arg1?: any): void => {
 export const load = (site: string, config?: PanelbearConfig): void => {
   const tracker = document.createElement('script');
   tracker.async = true;
-  tracker.src = `${SCRIPT_CDN_HOST}/analytics.js?site=${site}`;
+  tracker.src = config?.scriptSrc
+    ? `${config.scriptSrc}?site=${site}`
+    : `${SCRIPT_CDN_HOST}/analytics.js?site=${site}`;
   document.head.appendChild(tracker);
 
   interpret('config', {
