@@ -1,5 +1,3 @@
-const SCRIPT_CDN_HOST = 'https://cdn.panelbear.com';
-
 export interface PanelbearConfig {
   site?: string;
   debug?: boolean;
@@ -37,9 +35,7 @@ const interpret: PanelbearInterpreter = (command: any, arg1?: any): void => {
 export const load = (site: string, config?: PanelbearConfig): void => {
   const tracker = document.createElement('script');
   tracker.async = true;
-  tracker.src = config?.scriptSrc
-    ? `${config.scriptSrc}?site=${site}`
-    : `${SCRIPT_CDN_HOST}/analytics.js?site=${site}`;
+  tracker.src = `${config?.scriptSrc ?? 'https://cdn.panelbear.com/analytics.js'}?site=${site}`;
   document.head.appendChild(tracker);
 
   interpret('config', {
