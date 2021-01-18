@@ -90,42 +90,6 @@ export const usePanelbear = (site, config = {}) => {
 };
 ```
 
-### Serving Panelbear requests from your own domain
-
-While the script and analytics API calls are handled by Panelbear's servers, you can point all requests to first pass through your own server.
-
-For example, using Next.js this is super simple if you configure rewrites in your `next.config.js`:
-
-```javascript
-
-module.exports = {
-  async rewrites() {
-    return [
-      {
-        source: '/bear.js',
-        destination: 'https://cdn.panelbear.com/analytics.js',
-      },
-      {
-        // Or '/_panelbear/:path*/' if using tralingSlash: true
-        source: '/_panelbear/:path*',
-        destination: 'https://api.panelbear.com/:path*',
-      },
-    ];
-  },
-};
-```
-
-Then when loading the Panelbear script:
-
-```
-Panelbear.load(site, { scriptSrc: '/bear.js', analyticsHost: '/_panelbear' });
-```
-
-The `scriptSrc` parameter tells the script which URL to use to load the script, and the `analyticsHost` parameter tells it to which hostname it should make the API calls. The final requests in this case would look like:
-
-- Analytics script: `$YOUR_DOMAIN/bear.js?site=YourSiteId`
-- API calls prefix: `$YOUR_DOMAIN/_panelbear/*`
-
 ## Changelog
 
 ### 1.2.0
