@@ -92,6 +92,10 @@ export const usePanelbear = (site, config = {}) => {
 
 ## Changelog
 
+### 1.3.1
+
+- Export config interface and event schema
+
 ### 1.3.0
 
 - Update PanelbearConfig interface available fields.
