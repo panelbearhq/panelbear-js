@@ -41,60 +41,21 @@ Panelbear.trackPageview();
 Panelbear.track('NewsletterSignup');
 ```
 
-### Real-world usage
+## Framework integrations
 
-Here's an example integration with NextJS using standard React hooks:
-
-```javascript
-// ./pages/_app.js
-
-import { usePanelbear } from './../hooks/panelbear';
-
-function CustomApp({ Component, pageProps }) {
-  // Load Panelbear only once during the app lifecycle
-  usePanelbear('YOUR_SITE_ID', {
-    // Uncomment to allow sending events on localhost, and log to console too.
-    // debug: true
-  });
-
-  return <Component {...pageProps} />;
-}
-
-export default CustomApp;
-```
-
-```javascript
-// ./hooks/panelbear.js
-
-import * as Panelbear from '@panelbear/panelbear-js';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-
-export const usePanelbear = (site, config = {}) => {
-  const router = useRouter();
-
-  useEffect(() => {
-    Panelbear.load(site, config);
-
-    // Trigger initial page view
-    Panelbear.trackPageview();
-
-    // Add on route change handler for client-side navigation
-    const handleRouteChange = () => Panelbear.trackPageview();
-    router.events.on('routeChangeComplete', handleRouteChange);
-
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, []);
-};
-```
+- [Next.js](https://www.npmjs.com/package/@panelbear/panelbear-nextjs)
+- [Vuepress](https://www.npmjs.com/package/@panelbear/vuepress-plugin-panelbear)
+- [Gatsby](https://www.npmjs.com/package/gatsby-plugin-panelbear)
 
 ## Changelog
 
+### 1.3.2
+
+- Update docs.
+
 ### 1.3.1
 
-- Export config interface and event schema
+- Export config interface and event schema.
 
 ### 1.3.0
 
