@@ -1,7 +1,7 @@
 /**
  * The Panelbear script configuration object.
  */
-interface PanelbearConfig {
+export interface PanelbearConfig {
   /**
    * The Site ID to report events for.
    */
@@ -44,7 +44,7 @@ interface PanelbearConfig {
   includeURLFragment?: boolean;
 }
 
-interface PanelbearEvent {
+export interface PanelbearEvent {
   pid: string;
   event: string;
   url?: string;
