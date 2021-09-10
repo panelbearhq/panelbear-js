@@ -92,6 +92,12 @@ export const usePanelbear = (site, config = {}) => {
 
 ## Changelog
 
+### 1.3.0
+
+- Update PanelbearConfig interface available fields.
+- Upgrade package dependencies.
+- Add interface docs.
+
 ### 1.2.0
 
 - Allow scriptSrc config option to load Panelbear script from own domain.
