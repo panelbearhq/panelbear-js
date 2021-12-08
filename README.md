@@ -49,6 +49,10 @@ Panelbear.track('NewsletterSignup');
 
 ## Changelog
 
+### 1.3.3
+
+- Handle error on bind queue to window when element with same name exists (eg. <div id="panelbear"></div>).
+
 ### 1.3.2
 
 - Update docs.

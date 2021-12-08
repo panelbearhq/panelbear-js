@@ -91,7 +91,12 @@ const interpret: PanelbearInterpreter = (command: any, arg1?: any): void => {
       window.panelbearQ.push(arguments as any);
     };
 
-  window.panelbear(command, arg1);
+  try {
+    window.panelbear(command, arg1);
+  } catch (e) {
+    // tslint:disable-next-line:no-console
+    console.warn('There was an error while executing a Panelbear command', e)
+  }
 };
 
 export const load = (site: string, config?: PanelbearConfig): void => {
